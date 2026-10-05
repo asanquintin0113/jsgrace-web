@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS GRACE Digital Engine</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .data-table { width: 100%; border-collapse: collapse; }
+        .data-table th, .data-table td { text-align: left; padding: 8px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+        .data-table td.actions { white-space: nowrap; }
+        .data-table button { margin-right: 6px; }
+        button.secondary { background: white; color: #1f2937; border: 1px solid #d1d5db; }
+        .status { font-weight: 600; }
+        .muted { color: #6b7280; }
+        .topbar .user-area { display: flex; align-items: center; gap: 12px; }
+        #activity ul { list-style: none; margin: 0; padding: 0; }
+        #activity li { padding: 6px 0; border-bottom: 1px solid #e5e7eb; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body style="visibility: hidden;">
+
+    <header class="topbar">
+        <div class="logo">
+            JS GRACE
+            <span>Digital Engine</span>
+        </div>
+        <div class="user-area">
+            <span id="userEmail"></span>
+            <button id="logoutButton" type="button">Cerrar sesión</button>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <nav>
+            <a href="#" class="active">Dashboard</a>
+            <a href="#">CRM</a>
+            <a href="#">Leads</a>
+            <a href="#">Clientes</a>
+            <a href="#">Marketing</a>
+            <a href="#">Contenido</a>
+            <a href="#">WhatsApp</a>
+            <a href="#">Ventas</a>
+            <a href="#">Knowledge Base</a>
+            <a href="#">Aprobaciones</a>
+            <a href="#">Analytics</a>
+            <a href="#">Configuración</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <section class="welcome">
+            <h1>Dashboard</h1>
+            <p>Bienvenido al centro de operaciones de JS GRACE.</p>
+        </section>
+
+        <section class="stats">
+            <div class="card">
+                <h3>Leads</h3>
+                <strong id="leadsCount">…</strong>
+                <span>Leads registrados</span>
+            </div>
+            <div class="card">
+                <h3>Clientes</h3>
+                <strong id="customersCount">…</strong>
+                <span>Clientes registrados</span>
+            </div>
+            <div class="card">
+                <h3>Ventas</h3>
+                <strong id="salesCount">…</strong>
+                <span>Ventas registradas</span>
+            </div>
+            <div class="card">
+                <h3>Contenido</h3>
+                <strong id="contentCount">…</strong>
+                <span>Contenido pendiente</span>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-header">
+                <h2>Contenido y aprobaciones</h2>
+            </div>
+            <div id="approvals"><p class="muted">Cargando…</p></div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-header">
+                <h2>Leads recientes</h2>
+            </div>
+            <div id="leads"><p class="muted">Cargando…</p></div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-header">
+                <h2>Actividad reciente</h2>
+                <button id="testButton" type="button">Probar sistema</button>
+            </div>
+            <p id="testResult" class="muted"></p>
+            <div id="activity"><p class="muted">Cargando…</p></div>
+        </section>
+
+    </main>
+
+    <script src="config.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
